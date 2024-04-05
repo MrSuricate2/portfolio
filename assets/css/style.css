@@ -73,6 +73,9 @@
    * typography
    */
 
+  /* font-family */
+  --ff-poppins: "Poppins", sans-serif;
+
   /* font-size */
   --fs-1: 24px;
   --fs-2: 18px;
