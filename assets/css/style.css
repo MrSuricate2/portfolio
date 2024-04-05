@@ -74,7 +74,7 @@
    */
 
   /* font-family */
-  --ff-poppins: "Poppins", sans-serif;
+  --ff-poppins: 'Poppins', sans-serif;
 
   /* font-size */
   --fs-1: 24px;
@@ -152,6 +152,8 @@ input, textarea {
 }
 
 :focus { outline-color: var(--orange-yellow-crayola); }
+
+html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
 
