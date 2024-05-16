@@ -722,6 +722,43 @@ main {
   line-height: 1.6;
 }
 
+.table {
+  display: flex;
+  justify-content: center;
+}
+
+.table-btn {
+  position: relative;
+  width: 100%;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.table-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.table-btn:hover { background: var(--bg-gradient-yellow-1); }
+
+.table-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+
 
 /**
  * #clients 
@@ -1525,6 +1562,11 @@ textarea.form-input::-webkit-resizer { display: none; }
     padding: 16px 20px;
   }
 
+  .table-btn {
+    --fs-6: 16px;
+    padding: 16px 20px;
+  }
+
   .form-btn ion-icon { font-size: 18px; }
 
 }
@@ -1625,6 +1667,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   .form-btn {
     width: max-content;
     margin-left: auto;
+  }
+
+  .table-btn {
+    width: max-content;
   }
   
 }
