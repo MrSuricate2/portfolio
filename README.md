@@ -93,7 +93,7 @@ Le site est configuré avec un webhook qui déclenche automatiquement un déploi
 
 ## 📄 Licence
 
-Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT).
+Ce projet est sous licence [MIT](LICENSE).
 
 ## 📞 Contact
 
