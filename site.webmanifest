@@ -1,0 +1,29 @@
+{
+    "name": "Kevin Ferraretto - Développeur fullstack",
+    "short_name": "Kevin Ferraretto",
+    "description": "Portfolio de Kevin Ferraretto, développeur fullstack basé à Toulouse. Explorez ses compétences et réalisations en développement web et applicatif.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4d5bce",
+    "icons": [
+        {
+            "src": "./assets/images/favicon/favicon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/favicon/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "lang": "fr",
+    "dir": "ltr",
+    "orientation": "portrait",
+    "categories": [
+        "portfolio",
+        "développement",
+        "web"
+    ]
+}

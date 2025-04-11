@@ -7,21 +7,25 @@
   <title>Kevin Ferraretto</title>
   <meta name="description" content="Découvrez le portfolio de Kevin Ferraretto, développeur fullstack basé à Toulouse. Explorez ses compétences et réalisations en développement web et applicatif." />
   <meta name="author" content="Kevin Ferraretto">
+  <meta property="og:title" content="Kevin Ferraretto - Développeur fullstack à Toulouse">
+  <meta property="og:description"
+    content="Découvrez le portfolio de Kevin Ferraretto, développeur fullstack basé à Toulouse. Explorez ses compétences et réalisations en développement web et applicatif.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kevin-ferraretto.fr">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="./assets/images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg" />
   <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="manifest" href="./site.webmanifest" />
+  <link rel="preload" href="./assets/css/style.css" as="style">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <main>
     <aside class="sidebar" data-sidebar>
-      <div class="sidebar-info">
+      <div class="sidebar-info" itemscope itemtype="http://schema.org/Person">
         <div class="info-content">
           <h1 class="name" title="Kevin Ferraretto">Kevin <b>Ferraretto</b></h1>
           <p class="title"><b>Développeur fullstack</b></p>
@@ -36,7 +40,7 @@
         <ul class="contacts-list">
           <li class="contact-item">
             <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+              <ion-icon name="mail-outline" aria-label="Email"></ion-icon>
             </div>
             <div class="contact-info">
               <p class="contact-title">Email</p>
@@ -45,7 +49,7 @@
           </li>
           <li class="contact-item">
             <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
+              <ion-icon name="phone-portrait-outline" aria-label="Phone"></ion-icon>
             </div>
             <div class="contact-info">
               <p class="contact-title">Téléphone</p>
@@ -54,7 +58,7 @@
           </li>
           <li class="contact-item">
             <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
+              <ion-icon name="calendar-outline" aria-label="Calendar"></ion-icon>
             </div>
             <div class="contact-info">
               <p class="contact-title">Age</p>
@@ -63,7 +67,7 @@
           </li>
           <li class="contact-item">
             <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
+              <ion-icon name="location-outline" aria-label="Location"></ion-icon>
             </div>
             <div class="contact-info">
               <p class="contact-title">Localisation</p>
@@ -74,13 +78,13 @@
         <div class="separator"></div>
         <ul class="social-list">
           <li class="social-item">
-            <a href="https://github.com/MrSuricate2" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
+            <a href="https://github.com/MrSuricate2" class="social-link" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="logo-github" aria-label="GitHub"></ion-icon>
             </a>
           </li>
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/kevin-ferraretto/" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
+            <a href="https://www.linkedin.com/in/kevin-ferraretto/" class="social-link" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="logo-linkedin" aria-label="LinkedIn"></ion-icon>
             </a>
           </li>
         </ul>
@@ -217,7 +221,7 @@
 
             <button class="filter-select" data-select>
 
-              <div class="select-value" data-selecct-value>Sélectionner une catégorie</div>
+              <div class="select-value" data-select-value>Sélectionner une catégorie</div>
 
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
@@ -997,6 +1001,7 @@
         <section class="contact-form">
 
           <form action="https://formspree.io/f/mayrkvdp" method="post" class="form" data-form>
+            <input type="text" name="_gotcha" style="display:none">
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Nom complet" required data-form-input>
@@ -1029,13 +1034,13 @@
   <!--
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js" defer></script>
 
   <!--
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
 
 </body>
 

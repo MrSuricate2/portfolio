@@ -69,9 +69,71 @@
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
 
-  /**
-   * typography
-   */
+  /* typography */
+
+  /* Regular */
+    @font-face {
+      font-family: 'Poppins';
+      src: url('../font/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+  
+    /* Italic */
+    @font-face {
+      font-family: 'Poppins';
+      src: url('../font/Poppins-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+  
+    /* Light */
+    @font-face {
+      font-family: 'Poppins';
+      src: url('../font/Poppins-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+    }
+  
+    /* Light Italic */
+    @font-face {
+      font-family: 'Poppins';
+      src: url('../font/Poppins-LightItalic.ttf') format('truetype');
+      font-weight: 300;
+      font-style: italic;
+    }
+  
+    /* Medium */
+    @font-face {
+      font-family: 'Poppins';
+      src: url('../font/Poppins-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+  
+    /* Medium Italic */
+    @font-face {
+      font-family: 'Poppins';
+      src: url('../font/Poppins-MediumItalic.ttf') format('truetype');
+      font-weight: 500;
+      font-style: italic;
+    }
+  
+    /* SemiBold */
+    @font-face {
+      font-family: 'Poppins';
+      src: url('../font/Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+  
+    /* SemiBold Italic */
+    @font-face {
+      font-family: 'Poppins';
+      src: url('../font/Poppins-SemiBoldItalic.ttf') format('truetype');
+      font-weight: 600;
+      font-style: italic;
+    }
 
   /* font-family */
   --ff-poppins: 'Poppins', sans-serif;

@@ -1,5 +1,10 @@
+'use strict';
+
 // element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+const elementToggleFunc = function (elem) {
+  if (!elem) return;
+  elem.classList.toggle("active");
+}
 
 
 
@@ -8,7 +13,11 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+if (sidebar && sidebarBtn) {
+  sidebarBtn.addEventListener("click", function () {
+    elementToggleFunc(sidebar);
+  });
+}
 
 
 
@@ -25,8 +34,14 @@ const modalText = document.querySelector("[data-modal-text]");
 
 // modal toggle function
 const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
+  try {
+    if (modalContainer && overlay) {
+      modalContainer.classList.toggle("active");
+      overlay.classList.toggle("active");
+    }
+  } catch (error) {
+    console.error('Erreur dans la fonction modale:', error);
+  }
 }
 
 // add click event to all modal items
@@ -49,7 +64,7 @@ overlay.addEventListener("click", testimonialsModalFunc);
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
+const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
 select.addEventListener("click", function () { elementToggleFunc(this); });
@@ -124,7 +139,8 @@ const pages = document.querySelectorAll("[data-page]");
 for (const element of navigationLinks) {
   element.addEventListener("click", function () {
     for (let i = 0; i < pages.length; i++) {
-      if (this.dataset.navLink === pages[i].dataset.page) {
+      const navType = this.dataset.navLink;
+      if (navType && navType === pages[i].dataset.page) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);
