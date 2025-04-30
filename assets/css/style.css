@@ -766,43 +766,6 @@ main {
   line-height: 1.6;
 }
 
-.modal-content .separateur {
-  display: flex;
-  justify-content: space-between;
-}
-
-.modal-content .details {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 16px;
-}
-
-.modal-content .details-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.modal-content .details-compétence {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.modal-content .details-source-code {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.modal-content .description {
-  width: 50%;
-  text-align: justify;
-}
-
 
 /*-----------------------------------*\
   #RESUME
@@ -1170,6 +1133,43 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .project-img { height: auto; }
 
+  .modal-content .separateur {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-content .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .modal-content .details-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .modal-content .details-compétence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content .details-source-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content .description {
+    text-align: justify;
+    width: fit-content;
+  }
+
 }
 
 
@@ -1502,6 +1502,45 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* portfolio grid */
 
   .project-list { grid-template-columns: 1fr 1fr; }
+
+
+  .modal-content .separateur {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .modal-content .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .modal-content .details-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .modal-content .details-compétence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content .details-source-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content .description {
+    width: 50%;
+    text-align: justify;
+  }
 
 
 
