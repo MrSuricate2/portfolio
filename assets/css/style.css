@@ -1401,6 +1401,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .form-input { padding: 15px 20px; }
 
+    .form-input-hidden {
+      display: none;
+    }
+
   textarea.form-input { margin-bottom: 30px; }
 
   .form-btn {
