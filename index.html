@@ -98,19 +98,19 @@
     </aside>
 
     <div class="main-content">
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Navigation principale">
         <ul class="navbar-list">
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link="about">A propos</button>
+            <button class="navbar-link active" data-nav-link="about" aria-current="page">A propos</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
+            <button class="navbar-link" data-nav-link="portfolio" aria-current="page">Portfolio</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="resume">Parcours</button>
+            <button class="navbar-link" data-nav-link="resume" aria-current="page">Parcours</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="contact">Contact</button>
+            <button class="navbar-link" data-nav-link="contact" aria-current="page">Contact</button>
           </li>
         </ul>
       </nav>
@@ -225,7 +225,12 @@
 
           <div class="filter-select-box">
 
-            <button class="filter-select" data-select>
+            <button class="filter-select"
+              data-select
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-labelledby="filter-label">
+              <span id="filter-label" class="visually-hidden">Filtrer par catégorie</span>
 
               <div class="select-value" data-select-value>Sélectionner une catégorie</div>
 
@@ -235,21 +240,23 @@
 
             </button>
 
-            <ul class="select-list">
+            <ul class="select-list"
+              role="listbox"
+              aria-labelledby="filter-label">
 
-              <li class="select-item">
+              <li role="option" class="select-item">
                 <button data-select-item>Tout</button>
               </li>
 
-              <li class="select-item">
+              <li role="option" class="select-item">
                 <button data-select-item>Projets scolaires</button>
               </li>
 
-              <li class="select-item">
+              <li role="option" class="select-item">
                 <button data-select-item>Projets personnels</button>
               </li>
 
-              <li class="select-item">
+              <li role="option" class="select-item">
                 <button data-select-item>Projets professionnels</button>
               </li>
 
@@ -883,23 +890,26 @@
           - portfolio modal
         -->
 
-        <div class="modal-container" data-modal-container>
+        <div class="modal-container"
+          data-modal-container
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          aria-describedby="modal-description">
 
           <div class="overlay" data-overlay></div>
 
           <section class="projet-modal">
 
-            <button class="modal-close-btn" data-modal-close-btn aria-label="Fermer">
-              <ion-icon name="close-outline"></ion-icon>
+            <button class="modal-close-btn" data-modal-close-btn aria-label="Fermer la modale">
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
             </button>
 
             <div class="modal-content">
 
-              <h2 class="modal-title" data-modal-title>name</h2>
+              <h2 id="modal-title" class="modal-title" data-modal-title>name</h2>
 
-              <div data-modal-text>
-                description
-              </div>
+              <div id="modal-description" data-modal-text>description</div>
 
             </div>
 

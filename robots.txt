@@ -1,2 +1,7 @@
 User-agent: *
+Allow: /
+Disallow: /assets/font/
+Disallow: /assets/js/
 Disallow: /*.pdf$
+
+Sitemap: https://kevin-ferraretto.fr/sitemap.xml
