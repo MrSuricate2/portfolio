@@ -13,9 +13,23 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  if (event.request.url.includes('send-email.php')) {
+    // Network only pour les requêtes API
+    event.respondWith(fetch(event.request));
+    return;
+  }
+  
+  // Stale-while-revalidate pour les assets
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+    caches.match(event.request).then((cached) => {
+      const fetched = fetch(event.request).then((response) => {
+        const responseToCache = response.clone();
+        caches.open('portfolio-v1').then((cache) => {
+          cache.put(event.request, responseToCache);
+        });
+        return response;
+      });
+      return cached || fetched;
     })
   );
 });

@@ -113,7 +113,6 @@ for (const element of filterBtn) {
 
 
 // contact form variables
-// contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
@@ -121,6 +120,23 @@ const formMessage = document.getElementById('formMessage');
 
 // Fonction de validation du formulaire
 function validateForm() {
+  const name = document.querySelector('[name="fullname"]');
+  const message = document.querySelector('[name="message"]');
+  
+  // Validation nom (min 2 caractères, pas de chiffres)
+  if (name.value.length < 2 || /\d/.test(name.value)) {
+    name.setCustomValidity('Le nom doit contenir au moins 2 caractères sans chiffres');
+  } else {
+    name.setCustomValidity('');
+  }
+  
+  // Validation message (min 10 caractères)
+  if (message.value.length < 10) {
+    message.setCustomValidity('Le message doit contenir au moins 10 caractères');
+  } else {
+    message.setCustomValidity('');
+  }
+
   const consentCheckbox = document.getElementById('consent');
   
   if (form.checkValidity() && consentCheckbox && consentCheckbox.checked) {
@@ -130,9 +146,18 @@ function validateForm() {
   }
 }
 
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+const debouncedValidate = debounce(validateForm, 300);
 // add event to all form input field
 for (const element of formInputs) {
-  element.addEventListener("input", validateForm);
+  element.addEventListener("input", debouncedValidate);
 }
 
 const consentCheckbox = document.getElementById('consent');

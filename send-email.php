@@ -1,13 +1,5 @@
 <?php
 
-/**
- * Script d'envoi d'email pour le formulaire de contact
- * Portfolio Kevin Ferraretto
- * 
- * Ce fichier doit être placé à la racine de ton site web
- * et nécessite un serveur PHP avec la fonction mail() activée
- */
-
 // Configuration CORS (si nécessaire)
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
@@ -18,6 +10,22 @@ header('Access-Control-Allow-Headers: Content-Type');
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['success' => false, 'message' => 'Méthode non autorisée']);
+    exit;
+}
+
+// Protection rate limiting
+session_start();
+$max_attempts = 3;
+$time_window = 3600; // 1 heure
+
+if (!isset($_SESSION['form_attempts'])) {
+    $_SESSION['form_attempts'] = ['count' => 0, 'first_attempt' => time()];
+}
+
+$attempts = $_SESSION['form_attempts'];
+if ($attempts['count'] >= $max_attempts && (time() - $attempts['first_attempt']) < $time_window) {
+    http_response_code(429);
+    echo json_encode(['success' => false, 'message' => 'Trop de tentatives. Réessayez dans 1 heure.']);
     exit;
 }
 
@@ -42,7 +50,7 @@ if ($consent !== 'on' && $consent !== 'true') {
 }
 
 // Validation de l'email
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !checkdnsrr(substr(strrchr($email, "@"), 1), "MX")) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Email invalide']);
     exit;
@@ -66,6 +74,7 @@ $destinataire = 'ferraretto.kev@gmail.com'; // Ton email
 $sujet_email = 'Nouveau message depuis kevin-ferraretto.fr - ' . $nom;
 
 // Corps de l'email en HTML
+$message_safe = htmlspecialchars(nl2br($message), ENT_QUOTES, 'UTF-8');
 $corps_html = "
 <!DOCTYPE html>
 <html>
@@ -158,7 +167,7 @@ $corps_html = "
             </div>
             <div class='message-box'>
                 <span class='label'>💬 Message</span>
-                <div class='value'>" . nl2br($message) . "</div>
+                <div class='value'>" . $message_safe . "</div>
             </div>
         </div>
         <div class='footer'>
@@ -168,21 +177,6 @@ $corps_html = "
     </div>
 </body>
 </html>
-";
-
-// Corps de l'email en texte brut (fallback)
-$corps_text = "
-Nouveau message de contact - Portfolio Kevin Ferraretto
-========================================================
-
-Nom: {$nom}
-Email: {$email}
-
-Message:
-{$message}
-
---
-Ce message a été envoyé depuis le formulaire de contact du site kevin-ferraretto.fr
 ";
 
 // Headers de l'email
