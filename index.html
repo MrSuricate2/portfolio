@@ -94,6 +94,22 @@
             </a>
           </li>
         </ul>
+        <div class="separator"></div>
+        <ul class="legal-list">
+          <li class="legal-item">
+            <a href="mentions-legales.html" class="legal-link">
+              <ion-icon name="document-text-outline"></ion-icon>
+              <span>Mentions légales</span>
+            </a>
+          </li>
+        
+          <li class="legal-item">
+            <a href="politique-confidentialite.html" class="legal-link">
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+              <span>Politique de confidentialité</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </aside>
 
@@ -1173,7 +1189,7 @@
 
         <section class="contact-form">
 
-          <form action="https://formspree.io/f/mayrkvdp" method="post" class="form" data-form>
+          <form action="send-email.php" method="post" class="form" data-form id="contactForm">
             <input type="text" name="_gotcha" class="form-input-hidden" aria-hidden="true" tabindex="-1"
               aria-label="Champ anti-spam, ne pas remplir">
 
@@ -1184,6 +1200,17 @@
             </div>
 
             <textarea name="message" class="form-input" placeholder="Votre message" required data-form-input></textarea>
+
+            <div class="form-checkbox">
+              <label for="consent" class="checkbox-label">
+                <input type="checkbox" id="consent" name="consent" required aria-required="true">
+                <p class="checkbox-text">
+                  J'accepte que mes données soient utilisées pour me recontacter. Consultez la <a href="./politique-confidentialite.html" target="_blank">politique de confidentialité</a>.
+                </p>
+              </label>
+            </div>
+
+            <div class="form-message" id="formMessage" style="display: none;"></div>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
@@ -1197,7 +1224,6 @@
       </article>
 
     </div>
-
   </main>
 
 
@@ -1223,7 +1249,6 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-
 </body>
 
 </html>

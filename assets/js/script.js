@@ -113,18 +113,101 @@ for (const element of filterBtn) {
 
 
 // contact form variables
+// contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
+const formMessage = document.getElementById('formMessage');
+
+// Fonction de validation du formulaire
+function validateForm() {
+  const consentCheckbox = document.getElementById('consent');
+  
+  if (form.checkValidity() && consentCheckbox && consentCheckbox.checked) {
+    formBtn.removeAttribute("disabled");
+  } else {
+    formBtn.setAttribute("disabled", "");
+  }
+}
 
 // add event to all form input field
 for (const element of formInputs) {
-  element.addEventListener("input", function () {
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
+  element.addEventListener("input", validateForm);
+}
+
+const consentCheckbox = document.getElementById('consent');
+if (consentCheckbox) {
+  consentCheckbox.addEventListener('change', validateForm);
+}
+
+// Fonction pour afficher un message
+function showFormMessage(message, type = 'success') {
+  if (!formMessage) return;
+  
+  formMessage.style.display = 'block';
+  formMessage.textContent = message;
+  formMessage.className = `form-message ${type}`;
+  
+  // Scroll vers le message
+  formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Fonction pour réinitialiser le formulaire
+function resetContactForm() {
+  form.reset();
+  formBtn.setAttribute("disabled", "");
+  
+  // Cacher le message après 5 secondes
+  setTimeout(() => {
+    if (formMessage) {
+      formMessage.style.display = 'none';
+    }
+  }, 5000);
+}
+
+// Gestion de la soumission du formulaire
+if (form) {
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    
+    // Désactiver le bouton pendant l'envoi
+    formBtn.setAttribute("disabled", "");
+    const buttonText = formBtn.querySelector('span');
+    const originalText = buttonText.textContent;
+    buttonText.textContent = 'Envoi en cours...';
+    
+    // Cacher le message précédent
+    if (formMessage) {
+      formMessage.style.display = 'none';
+    }
+    
+    try {
+      // Récupérer les données du formulaire
+      const formData = new FormData(form);
+      
+      // Envoyer la requête
+      const response = await fetch('send-email.php', {
+        method: 'POST',
+        body: formData
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        showFormMessage(data.message, 'success');
+        resetContactForm();
+      } else {
+        showFormMessage(data.message, 'error');
+        validateForm(); // Réactiver le bouton si le formulaire est toujours valide
+      }
+      
+    } catch (error) {
+      console.error('Erreur:', error);
+      showFormMessage('Une erreur est survenue. Veuillez réessayer plus tard.', 'error');
+      validateForm(); // Réactiver le bouton
+    } finally {
+      // Restaurer le texte du bouton
+      buttonText.textContent = originalText;
     }
   });
 }

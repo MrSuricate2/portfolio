@@ -3,5 +3,7 @@ Allow: /
 Disallow: /assets/font/
 Disallow: /assets/js/
 Disallow: /*.pdf$
+Disallow: /mentions-legales.html
+Disallow: /politique-confidentialite.html
 
 Sitemap: https://kevin-ferraretto.fr/sitemap.xml
