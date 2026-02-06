@@ -12,9 +12,12 @@ RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
 # Redirection de /download vers la page d'accueil
 RewriteRule ^download$ / [R=301,L]
 
-# Forcer HTTPS + retirer WWW en une seule règle
-RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} ^www\. [NC]
+# Rediriger WWW vers non-WWW (avec ou sans HTTPS)
+RewriteCond %{HTTP_HOST} ^www\.kevin-ferraretto\.fr$ [NC]
+RewriteRule ^(.*)$ https://kevin-ferraretto.fr/$1 [R=301,L]
+
+# Forcer HTTPS (seulement si pas déjà en HTTPS)
+RewriteCond %{HTTPS} off
 RewriteCond %{HTTP_HOST} !^localhost [NC]
 RewriteRule ^(.*)$ https://kevin-ferraretto.fr/$1 [R=301,L]
 
