@@ -1,3 +1,23 @@
+# ===============================================
+# REDIRECTIONS HTTPS ET WWW
+# ===============================================
+
+# Activer le moteur de réécriture
+RewriteEngine On
+
+# Forcer HTTPS (redirection de HTTP vers HTTPS)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Forcer WWW (redirection de non-www vers www)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# ===============================================
+# HEADERS DE SÉCURITÉ
+# ===============================================
+
 # Empêcher le clickjacking
 Header set X-Frame-Options "SAMEORIGIN"
 
@@ -14,4 +34,4 @@ Header set Referrer-Policy "strict-origin-when-cross-origin"
 Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 
 # Content Security Policy
-Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://formspree.io; style-src 'self' 'unsafe-inline'; img-src 'self' https://skillicons.dev data:; font-src 'self'; connect-src 'self' https://formspree.io"
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://skillicons.dev data:; font-src 'self'; connect-src 'self'"
