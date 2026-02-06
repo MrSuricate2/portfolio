@@ -5,6 +5,10 @@
 # Activer le moteur de réécriture
 RewriteEngine On
 
+# Redirection de /index.html vers /
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
 # Forcer HTTPS (redirection de HTTP vers HTTPS)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
