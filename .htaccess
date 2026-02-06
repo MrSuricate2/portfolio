@@ -1,5 +1,5 @@
 # ===============================================
-# REDIRECTIONS HTTPS ET WWW
+# REDIRECTIONS HTTPS ET NON-WWW
 # ===============================================
 
 # Activer le moteur de réécriture
@@ -12,11 +12,11 @@ RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
 # Redirection de /download vers la page d'accueil
 RewriteRule ^download$ / [R=301,L]
 
-# Forcer HTTPS + WWW en une seule règle
+# Forcer HTTPS + retirer WWW en une seule règle
 RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteCond %{HTTP_HOST} !^localhost [NC]
-RewriteRule ^(.*)$ https://www.kevin-ferraretto.fr/$1 [R=301,L]
+RewriteRule ^(.*)$ https://kevin-ferraretto.fr/$1 [R=301,L]
 
 # ===============================================
 # HEADERS DE SÉCURITÉ
