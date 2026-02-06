@@ -9,6 +9,9 @@ RewriteEngine On
 RewriteCond %{THE_REQUEST} /index\.html [NC]
 RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
 
+# Redirection de /download vers la page d'accueil (ou ton CV)
+RewriteRule ^download$ / [R=301,L]
+
 # Forcer HTTPS (redirection de HTTP vers HTTPS)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
