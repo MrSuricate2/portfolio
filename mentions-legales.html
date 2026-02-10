@@ -68,6 +68,15 @@
       gap: 12px;
     }
 
+    .back-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .back-link svg path {
+      fill: none;
+    }
+
     .legal-section {
       margin-bottom: 35px;
     }
@@ -153,14 +162,17 @@
   <main>
     <div class="legal-page">
       <div class="legal-container">
-        <a href="./index.html" class="back-link">
-          <ion-icon name="arrow-back-outline"></ion-icon>
+        <a href="./" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <title>Arrow Back</title>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" class="ionicon-fill-none"></path>
+          </svg>
           Retour à l'accueil
         </a>
 
         <header class="legal-header">
           <h1 class="legal-title">Mentions légales</h1>
-          <p class="legal-subtitle">Dernière mise à jour : 04 février 2026</p>
+          <p class="legal-subtitle">Dernière mise à jour : février 2026</p>
         </header>
 
         <div class="legal-content">
@@ -218,13 +230,6 @@
               <strong>Design original :</strong> Basé sur un template de <a href="https://github.com/codewithsadee" target="_blank" rel="noopener noreferrer">codewithsadee</a> 
               sous licence MIT, adapté et personnalisé par Kevin Ferraretto.
             </p>
-            <p>
-              <strong>Icônes :</strong> 
-            </p>
-            <ul style="list-style: disc; margin-left: 30px; margin-bottom: 15px;">
-              <li>Ionicons - Licence MIT</li>
-              <li>Skill Icons (skillicons.dev)</li>
-            </ul>
             <p>
               Toute reproduction, distribution, modification, adaptation, retransmission ou publication de ces 
               différents éléments est strictement interdite sans l'accord exprès par écrit de Kevin Ferraretto.
@@ -294,9 +299,5 @@
       </div>
     </div>
   </main>
-
-  <!-- Ionicons -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
 </body>
 </html>

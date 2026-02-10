@@ -42,7 +42,10 @@
         <button class="info_more-btn" data-sidebar-btn aria-expanded="false" aria-controls="sidebar-info-more"
           aria-label="Afficher les informations de contact">
           <span>Afficher les contacts</span>
-          <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <title>Chevron Down</title>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144" style="fill: none;"></path>
+          </svg>
         </button>
       </div>
       <div class="sidebar-info_more">
@@ -50,7 +53,11 @@
         <ul class="contacts-list">
           <li class="contact-item">
             <div class="icon-box">
-              <ion-icon name="mail-outline" aria-label="Email"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Mail</title>
+                <rect x="48" y="96" width="416" height="320" rx="40" ry="40" stroke-linecap="round" stroke-linejoin="round"></rect>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M112 160l144 112 144-112"></path>
+              </svg>
             </div>
             <div class="contact-info">
               <p class="contact-title">Email</p>
@@ -59,7 +66,11 @@
           </li>
           <li class="contact-item">
             <div class="icon-box">
-              <ion-icon name="phone-portrait-outline" aria-label="Phone"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Phone Portrait</title>
+                <rect x="128" y="16" width="256" height="480" rx="48" ry="48" stroke-linecap="round" stroke-linejoin="round"></rect>
+                <path d="M176 16h24a8 8 0 018 8h0a16 16 0 0016 16h64a16 16 0 0016-16h0a8 8 0 018-8h24" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
             </div>
             <div class="contact-info">
               <p class="contact-title">Téléphone</p>
@@ -68,7 +79,21 @@
           </li>
           <li class="contact-item">
             <div class="icon-box">
-              <ion-icon name="calendar-outline" aria-label="Calendar"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Calendar</title>
+                <rect stroke-linejoin="round" x="48" y="80" width="416" height="384" rx="48"></rect>
+                <circle cx="296" cy="232" r="24"></circle>
+                <circle cx="376" cy="232" r="24"></circle>
+                <circle cx="296" cy="312" r="24"></circle>
+                <circle cx="376" cy="312" r="24"></circle>
+                <circle cx="136" cy="312" r="24"></circle>
+                <circle cx="216" cy="312" r="24"></circle>
+                <circle cx="136" cy="392" r="24"></circle>
+                <circle cx="216" cy="392" r="24"></circle>
+                <circle cx="296" cy="392" r="24"></circle>
+                <path stroke-linejoin="round" stroke-linecap="round" d="M128 48v32M384 48v32"></path>
+                <path stroke-linejoin="round" d="M464 160H48"></path>
+              </svg>
             </div>
             <div class="contact-info">
               <p class="contact-title">Age</p>
@@ -77,7 +102,11 @@
           </li>
           <li class="contact-item">
             <div class="icon-box">
-              <ion-icon name="location-outline" aria-label="Location"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Location</title>
+                <path d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z" stroke-linecap="round" stroke-linejoin="round"></path>
+                <circle cx="256" cy="192" r="48" stroke-linecap="round" stroke-linejoin="round" class="ionicon-fill-none ionicon-stroke-width"></circle>
+              </svg>
             </div>
             <div class="contact-info">
               <p class="contact-title">Localisation</p>
@@ -89,12 +118,18 @@
         <ul class="social-list">
           <li class="social-item">
             <a href="https://github.com/MrSuricate2" class="social-link" target="_blank" rel="noopener noreferrer">
-              <ion-icon name="logo-github" aria-label="GitHub"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Logo Github</title>
+                <path d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 0 0 3.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 0 1-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0 0 25.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 0 1 5-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 0 1 112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 0 1 5 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 0 0 4-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32Z"/>
+              </svg>
             </a>
           </li>
           <li class="social-item">
             <a href="https://www.linkedin.com/in/kevin-ferraretto/" class="social-link" target="_blank" rel="noopener noreferrer">
-              <ion-icon name="logo-linkedin" aria-label="LinkedIn"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Logo Linkedin</title>
+                <path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"></path>
+              </svg>
             </a>
           </li>
         </ul>
@@ -102,14 +137,22 @@
         <ul class="legal-list">
           <li class="legal-item">
             <a href="mentions-legales.html" class="legal-link">
-              <ion-icon name="document-text-outline"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Document Text</title>
+                <path d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z" stroke-linejoin="round"></path>
+                <path d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
               <span>Mentions légales</span>
             </a>
           </li>
         
           <li class="legal-item">
             <a href="politique-confidentialite.html" class="legal-link">
-              <ion-icon name="shield-checkmark-outline"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Shield Checkmark</title>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M336 176L225.2 304 176 255.8"></path>
+                <path d="M463.1 112.37C373.68 96.33 336.71 84.45 256 48c-80.71 36.45-117.68 48.33-207.1 64.37C32.7 369.13 240.58 457.79 256 464c15.42-6.21 223.3-94.87 207.1-351.63z" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
               <span>Politique de confidentialité</span>
             </a>
           </li>
@@ -255,7 +298,10 @@
               <div class="select-value" data-select-value>Sélectionner une catégorie</div>
 
               <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <title>Chevron Down</title>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144"></path>
+                </svg>
               </div>
 
             </button>
@@ -291,7 +337,11 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
 
                   <img src="./assets/images/portfolio/street-favor-association.webp" alt="Street Favor Association" loading="lazy">
@@ -311,11 +361,11 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=symfony,tailwind" alt="Symfony, Tailwind" title="Symfony, Tailwind"/>
+                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symphony", title="Symfony" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                       </div>
-                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://street-favor-association.fr/">Visiter le site <ion-icon name="open-outline"></ion-icon></a>
                     </div>
                   </div>
                 </div>
@@ -327,7 +377,11 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
 
                   <img src="./assets/images/portfolio/SignalR.webp" alt="SignalR" loading="lazy">
@@ -353,7 +407,11 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=cs,dotnet,js,html,bootstrap" alt="C#, DotNet, JavaScript, HTML5, Bootstrap" title="C#, DotNet, JavaScript, HTML5, Bootstrap"/>
+                            <img src="./assets/images/icon/techno/CS.svg" alt="C#", title="C#" height="48" width="48">
+                            <img src="./assets/images/icon/techno/DotNet.svg" alt="DotNet", title="DotNet" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Bootstrap.svg" alt="Bootstrap", title="Bootstrap" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -368,7 +426,11 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
 
                   <img src="./assets/images/portfolio/examify.webp" alt="Examify" loading="lazy">
@@ -392,7 +454,11 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=cs,dotnet,js,html,bootstrap" alt="C#, DotNet, JavaScript, HTML5, Bootstrap" title="C#, DotNet, JavaScript, HTML5, Bootstrap"/>
+                            <img src="./assets/images/icon/techno/CS.svg" alt="C#", title="C#" height="48" width="48">
+                            <img src="./assets/images/icon/techno/DotNet.svg" alt="DotNet", title="DotNet" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Bootstrap.svg" alt="Bootstrap", title="Bootstrap" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -408,7 +474,11 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
 
                   <img src="./assets/images/portfolio/instameme.webp" alt="Insta-meme" loading="lazy">
@@ -432,11 +502,19 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=html,css,php" alt="HTML5, CSS3, PHP" title="HTML5, CSS3, PHP"/>
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP", title="PHP" height="48" width="48">
                           </div>
                         </div>
                       </div>
-                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://insta-meme.kevin-ferraretto.fr/">Visiter le site <ion-icon name="open-outline"></ion-icon></a>
+                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://insta-meme.kevin-ferraretto.fr/">
+                        Visiter le site
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <title>Open</title>
+                          <path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -449,7 +527,11 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
 
                   <img src="./assets/images/portfolio/jeu-du-pendu.webp" alt="Jeu du pendu" loading="lazy">
@@ -473,17 +555,23 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=html,css,js" alt="HTML5, CSS3, JavaScript" title="HTML5, CSS3, JavaScript"/>
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
                           </div>
                         </div>
                         <div class="details-source-code">
                           <h4>Code source :</h4>
-                          <a href="https://github.com/MrSuricate2/Jeu-du-pendu">
-                            <img src="https://skillicons.dev/icons?i=github" alt="Github" title="Github"/>
+                          <a href="https://github.com/MrSuricate2/Jeu-du-pendu" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github", title="Github" height="48" width="48">
                           </a>
                         </div>
                       </div>
-                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://pendu.kevin-ferraretto.fr/">Visiter le site <ion-icon name="open-outline"></ion-icon></a>
+                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://pendu.kevin-ferraretto.fr/">Visiter le site 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <title>Open</title>
+                          <path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
                     </div>
                   </div>
                 </div>
@@ -496,7 +584,11 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
 
                   <img src="./assets/images/portfolio/jeu-du-demineur.webp" alt="Jeu du demineur" loading="lazy">
@@ -520,17 +612,23 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=html,css,js" alt="HTML5, CSS3, JavaScript" title="HTML5, CSS3, JavaScript"/>
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
                           </div>
                         </div>
                         <div class="details-source-code">
                           <h4>Code source :</h4>
-                          <a href="https://github.com/MrSuricate2/Jeu-du-demineur">
-                            <img src="https://skillicons.dev/icons?i=github" alt="Github" title="Github"/>
+                          <a href="https://github.com/MrSuricate2/Jeu-du-demineur" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github", title="Github" height="48" width="48">
                           </a>
                         </div>
                       </div>
-                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://demineur.kevin-ferraretto.fr/">Visiter le site <ion-icon name="open-outline"></ion-icon></a>
+                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://demineur.kevin-ferraretto.fr/">Visiter le site 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <title>Open</title>
+                          <path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
                     </div>
                   </div>
                 </div>
@@ -543,7 +641,11 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
 
                   <img src="./assets/images/portfolio/BattleGame.webp" alt="BattleGame" loading="lazy">
@@ -569,7 +671,9 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=django,python,tailwind" alt="Django, Python, Tailwind" title="Django, Python, Tailwind"/>
+                            <img src="./assets/images/icon/techno/Django.svg" alt="Django", title="Django" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Python-Dark.svg" alt="Python", title="Python" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                     </div>
@@ -584,7 +688,11 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
 
                   <img src="./assets/images/portfolio/pronote.webp" alt="Pronote" loading="lazy">
@@ -608,7 +716,10 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=html,symfony,tailwind,mysql" alt="HTML5, Symfony, Tailwind, Mysql" title="HTML5, Symfony, Tailwind, Mysql"/>
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony", title="Symfony" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
+                            <img src="./assets/images/icon/techno/MySQL-Dark.svg" alt="Mysql", title="Mysql" height="48" width="48">
                           </div>
                         </div>
                     </div>
@@ -622,7 +733,11 @@
               <div data-project-item>
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
 
                   <img src="./assets/images/portfolio/pokedex.webp" alt="Pokedex" loading="lazy">
@@ -646,17 +761,22 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=react,tailwind" alt="React, Tailwind" title="React, Tailwind"/>
+                            <img src="./assets/images/icon/techno/React-Dark.svg" alt="React", title="React" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                         <div class="details-source-code">
                           <h4>Code source :</h4>
-                          <a href="https://github.com/Aiikhoo/pok-dex">
-                            <img src="https://skillicons.dev/icons?i=github" alt="Github" title="Github"/>
+                          <a href="https://github.com/Aiikhoo/pok-dex" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github", title="Github" height="48" width="48">
                           </a>
                         </div>
                       </div>
-                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://pokedex.kevin-ferraretto.fr/">Visiter le site <ion-icon name="open-outline"></ion-icon></a>
+                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://pokedex.kevin-ferraretto.fr/">Visiter le site 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <title>Open</title>
+                          <path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
                     </div>
                   </div>
                 </div>
@@ -667,7 +787,11 @@
               <div data-project-item>
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
             
                   <img src="./assets/images/portfolio/my-campus.webp" alt="My Campus" loading="lazy">
@@ -691,11 +815,16 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=symfony,tailwind" alt="Symfony, Tailwind" title="Symfony, Tailwind"/>
+                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony", title="Symfony" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                       </div>
-                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://my-campus.kevin-ferraretto.fr/">Visiter le site <ion-icon name="open-outline"></ion-icon></a>
+                      <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://my-campus.kevin-ferraretto.fr/">Visiter le site 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <title>Open</title>
+                          <path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
                     </div>
                   </div>
                 </div>
@@ -706,7 +835,11 @@
               <div data-project-item>
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
             
                   <img src="./assets/images/portfolio/fellback.webp" alt="Fellback" loading="lazy">
@@ -729,7 +862,8 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=django,tailwind" alt="Django, Tailwind" title="Django, Tailwind" />
+                            <img src="./assets/images/icon/techno/Django.svg" alt="Django", title="Django" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -743,7 +877,11 @@
               <div data-project-item>
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
             
                   <img src="./assets/images/portfolio/passwordGenerator.webp" alt="Fellback" loading="lazy">
@@ -765,18 +903,24 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=html,css,js" alt="HTML5, CSS3, JavaScript" title="HTML5, CSS3, JavaScript" />
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
                           </div>
                         </div>
                         <div class="details-source-code">
                           <h4>Code source :</h4>
-                          <a href="https://github.com/MrSuricate2/password-generator">
-                            <img src="https://skillicons.dev/icons?i=github" alt="Github" title="Github" />
+                          <a href="https://github.com/MrSuricate2/password-generator" target="_blank" rel="noopener noreferrer">
+                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github", title="Github" height="48" width="48">
                           </a>
                         </div>
                       </div>
                       <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://generateurdemotdepasse.kevin-ferraretto.fr/">Visiter le
-                        site <ion-icon name="open-outline"></ion-icon></a>
+                        site 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <title>Open</title>
+                          <path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
                     </div>
                   </div>
                 </div>
@@ -787,7 +931,11 @@
               <div data-project-item>
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
             
                   <img src="./assets/images/portfolio/techMarket.webp" alt="Fellback" loading="lazy">
@@ -817,11 +965,17 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=html,css,php" alt="HTML5, CSS3, PHP" title="HTML5, CSS3, PHP" />
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP", title="PHP" height="48" width="48">
                           </div>
                         </div>
                         <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://techMarket.kevin-ferraretto.fr/">Visiter le
-                          site <ion-icon name="open-outline"></ion-icon></a>
+                          site 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <title>Open</title>
+                          <path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
                       </div>
                     </div>
                   </div>
@@ -834,7 +988,11 @@
             
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
             
                   <img src="./assets/images/portfolio/april-nails.webp" alt="April Nails" loading="lazy">
@@ -864,12 +1022,17 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=symfony,tailwind" alt="Symfony, Tailwind" title="Symfony, Tailwind" />
+                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony", title="Symfony" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                       </div>
                       <a class="table-btn" target="_blank" rel="noopener noreferrer"
-                        href="https://april-nails.fr/">Visiter le site <ion-icon name="open-outline"></ion-icon></a>
+                        href="https://april-nails.fr/">Visiter le site 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <title>Open</title>
+                          <path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
                     </div>
                   </div>
                 </div>
@@ -881,7 +1044,11 @@
             
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <title>Eye</title>
+                      <path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <circle cx="256" cy="256" r="80" stroke-miterlimit="10"></circle>
+                    </svg>
                   </div>
             
                   <img src="./assets/images/portfolio/cristal-clean.webp" alt="Cristal Clean" loading="lazy">
@@ -911,12 +1078,19 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="https://skillicons.dev/icons?i=html,css,js,php" alt="HTML5, CSS3, JavaScript, PHP" title="HTML5, CSS3, JavaScript, PHP" />
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP", title="PHP" height="48" width="48">
                           </div>
                         </div>
                       </div>
                       <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://cristalclean.fr/">Visiter le
-                        site <ion-icon name="open-outline"></ion-icon></a>
+                        site 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <title>Open</title>
+                          <path d="M384 224v184a40 40 0 01-40 40H104a40 40 0 01-40-40V168a40 40 0 0140-40h167.48M336 64h112v112M224 288L440 72" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
                     </div>
                   </div>
                 </div>
@@ -942,7 +1116,10 @@
           <section class="projet-modal">
 
             <button class="modal-close-btn" data-modal-close-btn aria-label="Fermer la modale">
-              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Close</title>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M368 368L144 144M368 144L144 368" class="ionicon-fill-none ionicon-stroke-width"></path>
+              </svg>
             </button>
 
             <div class="modal-content">
@@ -971,13 +1148,16 @@
         <section class="timeline">
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Book</title>
+                <path d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
             </div>
             <h3>Diplômes</h3>
           </div>
           <ol class="timeline-list">
             <li class="timeline-item">
-              <h4 class="timeline-item-title">EPSI - Mastère expert informatique et système d’information</h4>
+              <h4 class="timeline-item-title">EPSI - Mastère expert informatique et système d'information</h4>
               <span>2025 — 2027</span>
             
               <p class="timeline-text">
@@ -1036,7 +1216,10 @@
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Book</title>
+                <path d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
             </div>
 
             <h3>Expériences</h3>
@@ -1136,7 +1319,13 @@
                 <h4>Front-End</h4>
               </div>
               <div class="skill-list">
-                  <img src="https://skillicons.dev/icons?i=html,css,js,react,django,bootstrap,tailwind?perline=5" alt="HTML5, CSS3, JavaScript, React, Django, Bootstrap, Tailwind" title="HTML5, CSS3, JavaScript, React, Django, Bootstrap, Tailwind"/>
+                  <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
+                  <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
+                  <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
+                  <img src="./assets/images/icon/techno/React-Dark.svg" alt="React", title="React" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Django.svg" alt="Django", title="Django" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Bootstrap.svg" alt="Bootstrap", title="Bootstrap" height="48" width="48">
+                  <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
               </div>
             </li>
 
@@ -1147,7 +1336,14 @@
               </div>
 
               <div class="skill-list">
-                  <img src="https://skillicons.dev/icons?i=java,python,php,symfony,cs,dotnet,laravel,kotlin?perline=5" alt="Java, Python, PHP, Symfony, C#, DotNet, Laravel, Kotlin" title="Java, Python, PHP, Symfony, C#, DotNet, Laravel, Kotlin"/>
+                  <img src="./assets/images/icon/techno/Java-Dark.svg" alt="Java", title="Java" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Python-Dark.svg" alt="Python", title="Python" height="48" width="48">
+                  <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP", title="PHP" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony", title="Symfony" height="48" width="48">
+                  <img src="./assets/images/icon/techno/CS.svg" alt="C#", title="C#" height="48" width="48">
+                  <img src="./assets/images/icon/techno/DotNet.svg" alt="DotNet", title="DotNet" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Laravel-Dark.svg" alt="Laravel", title="Laravel" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Kotlin-Dark.svg" alt="Kotlin", title="Kotlin" height="48" width="48">
               </div>
 
             </li>
@@ -1158,7 +1354,10 @@
               </div>
 
               <div class="skill-list">
-                  <img src="https://skillicons.dev/icons?i=idea,vscode,visualstudio,androidstudio" alt="JetBrains, VsCode, VisualStudio, AndroidStudio" title="JetBrains, VsCode, VisualStudio, AndroidStudio"/>
+                  <img src="./assets/images/icon/techno/Idea-Dark.svg" alt="JetBrains", title="JetBrains" height="48" width="48">
+                  <img src="./assets/images/icon/techno/VSCode-Dark.svg" alt="VsCode", title="VsCode" height="48" width="48">
+                  <img src="./assets/images/icon/techno/VisualStudio-Dark.svg" alt="VisualStudio", title="VisualStudio" height="48" width="48">
+                  <img src="./assets/images/icon/techno/AndroidStudio-Dark.svg" alt="AndroidStudio", title="AndroidStudio" height="48" width="48">
               </div>
 
             </li>
@@ -1221,7 +1420,10 @@
             <div class="form-message" id="formMessage" style="display: none;"></div>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <title>Paper Plane</title>
+                <path d="M473 39.05a24 24 0 00-25.5-5.46L47.47 185h-.08a24 24 0 001 45.16l.41.13 137.3 58.63a16 16 0 0015.54-3.59L422 80a7.07 7.07 0 0110 10L226.66 310.26a16 16 0 00-3.59 15.54l58.65 137.38c.06.2.12.38.19.57 3.2 9.27 11.3 15.81 21.09 16.25h1a24.63 24.63 0 0023-15.46L478.39 64.62A24 24 0 00473 39.05z"></path>
+              </svg>
               <span>Envoyer le message</span>
             </button>
 
@@ -1234,14 +1436,6 @@
     </div>
   </main>
 
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
   <script src="./assets/js/script.js" defer></script>
 
   <script>
@@ -1251,12 +1445,6 @@
         .catch(err => console.log('Erreur Service Worker', err));
     }
   </script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
 </body>
 
 </html>

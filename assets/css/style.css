@@ -154,7 +154,7 @@ a { text-decoration: none; }
 
 li { list-style: none; }
 
-img, ion-icon, a, button, time, span { display: block; }
+img, svg, a, button, time, span { display: block; }
 
 button {
   font: inherit;
@@ -181,6 +181,11 @@ input, textarea {
 html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
+
+svg {
+  stroke:currentColor;
+  fill: currentColor;
+}
 
 
 
@@ -231,8 +236,25 @@ article {
   z-index: -1;
 }
 
-.icon-box ion-icon { --ionicon-stroke-width: 35px; }
+.icon-box svg {
+  height: 16px;
+  width: 16px;
+}
 
+.icon-box svg rect {
+  stroke-width: 32px;
+  fill: none;
+}
+
+.icon-box svg circle {
+  stroke-width: 32px;
+  fill: none;
+}
+
+.icon-box svg path {
+  stroke-width: 32px;
+  fill: none;
+}
 article { display: none; }
 
 article.active {
@@ -406,6 +428,11 @@ main {
 
 .info_more-btn span { display: none; }
 
+.info_more-btn svg {
+  height: 12px;
+  width: 12px;
+}
+
 .sidebar-info_more {
   opacity: 0;
   visibility: hidden;
@@ -456,9 +483,11 @@ main {
   gap: 16px;
 }
 
-.social-item .social-link {
-  color: var(--light-gray-70);
-  font-size: 18px;
+.social-item .social-link { color: var(--light-gray-70); }
+
+.social-item svg {
+  height: 18px;
+  width: 18px;
 }
 
 .social-item .social-link:hover { color: var(--light-gray); }
@@ -490,9 +519,15 @@ main {
   color: var(--orange-yellow-crayola);
 }
 
-.legal-link ion-icon {
-  font-size: 18px;
+.legal-link svg {
+  height: 18px;
+  width: 18px;
   color: var(--orange-yellow-crayola);
+}
+
+.legal-link svg path {
+  fill: none;
+  stroke-width: 32px;
 }
 
 
@@ -653,6 +688,17 @@ main {
 
 .table-btn:hover::before { background: var(--bg-gradient-yellow-2); }
 
+.table-btn svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.table-btn svg path {
+  fill: none;
+  stroke-width: 32px;
+}
+
 
 
 /**
@@ -739,7 +785,16 @@ main {
 .modal-close-btn:hover,
 .modal-close-btn:focus { opacity: 1; }
 
-.modal-close-btn ion-icon { --ionicon-stroke-width: 50px; }
+.modal-close-btn svg path {
+  fill: none;
+  stroke-width: 32px;
+}
+
+
+.modal-close-btn svg path {
+  height: 16px;
+  width: 16px;
+}
 
 .modal-img-wrapper > img { display: none; }
 
@@ -850,7 +905,7 @@ main {
 .skill-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px;
 }
 
 
@@ -880,6 +935,16 @@ main {
 }
 
 .filter-select.active .select-icon { transform: rotate(0.5turn); }
+
+.select-icon svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.select-icon svg path {
+  fill: none;
+}
 
 .select-list {
   background: var(--eerie-black-2);
@@ -976,12 +1041,26 @@ main {
   transition: var(--transition-1);
 }
 
+.project-item-icon-box svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.project-item-icon-box svg path {
+  stroke-width: 50px;
+  fill: none;
+}
+
+.project-item-icon-box svg circle {
+  stroke-width: 50px;
+  fill: none;
+}
+
 .project-item > div:hover .project-item-icon-box {
   --scale: 1;
   opacity: 1;
 }
-
-.project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
 
 .project-img img {
   width: 100%;
@@ -1007,6 +1086,15 @@ main {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+}
+
+.details-compétence .skill-list {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.details-source-code {
+  padding-bottom: 4px;
 }
 
 
@@ -1085,7 +1173,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   transition: var(--transition-1);
 }
 
-.form-btn ion-icon { font-size: 16px; }
+.form-btn svg {
+  width: 16px;
+  height: 16px;
+}
 
 .form-btn:hover { background: var(--bg-gradient-yellow-1); }
 
@@ -1325,6 +1416,11 @@ textarea.form-input::-webkit-resizer { display: none; }
     font-size: 18px;
   }
 
+  .icon-box svg {
+    height: 18px;
+    width: 18px;
+  }
+
 
 
   /**
@@ -1368,7 +1464,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     font-size: var(--fs-8);
   }
 
-  .info_more-btn ion-icon { display: none; }
+  .info_more-btn svg { display: none; }
 
   .separator { margin: 32px 0; }
 
@@ -1508,7 +1604,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     padding: 16px 20px;
   }
 
-  .form-btn ion-icon { font-size: 18px; }
+  .form-btn svg { 
+    width: 18px;
+    height: 18px;
+  }
 
   .checkbox-label {
     font-size: var(--fs-8);
@@ -1641,6 +1740,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .modal-content .details-compétence h4 {
+    padding-bottom: 4px;
   }
 
   .modal-content .details-source-code {
