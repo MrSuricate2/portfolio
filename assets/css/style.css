@@ -196,9 +196,10 @@ input, textarea {
 }
 
 #skip-link {
-  position: absolute;
-  top: -100%;
+  position: fixed;
+  top: 0;
   left: 0;
+  transform: translateY(-100%);
   background: var(--orange-yellow-crayola);
   color: var(--smoky-black);
   padding: 8px 16px;
@@ -206,11 +207,11 @@ input, textarea {
   font-size: var(--fs-7);
   font-weight: var(--fw-600);
   z-index: 100;
-  transition: top var(--transition-1);
+  transition: transform var(--transition-1);
 }
 
 #skip-link:focus {
-  top: 0;
+  transform: translateY(0);
 }
 
 html { font-family: var(--ff-poppins); }
