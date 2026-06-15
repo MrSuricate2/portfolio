@@ -32,12 +32,13 @@
 </head>
 
 <body>
+  <a href="#main-content" id="skip-link">Aller au contenu principal</a>
   <main>
     <aside class="sidebar" data-sidebar>
       <div class="sidebar-info" itemscope itemtype="http://schema.org/Person">
         <div class="info-content">
           <h1 class="name" title="Kevin Ferraretto">Kevin <b>Ferraretto</b></h1>
-          <p class="title"><b>Développeur fullstack</b></p>
+          <p class="title"><strong>Développeur fullstack</strong></p>
         </div>
         <button class="info_more-btn" data-sidebar-btn aria-expanded="false" aria-controls="sidebar-info-more"
           aria-label="Afficher les informations de contact">
@@ -48,7 +49,7 @@
           </svg>
         </button>
       </div>
-      <div class="sidebar-info_more">
+      <div class="sidebar-info_more" id="sidebar-info-more">
         <div class="separator"></div>
         <ul class="contacts-list">
           <li class="contact-item">
@@ -117,16 +118,16 @@
         <div class="separator"></div>
         <ul class="social-list">
           <li class="social-item">
-            <a href="https://github.com/MrSuricate2" class="social-link" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <a href="https://github.com/MrSuricate2" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub de Kevin Ferraretto (nouvel onglet)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
                 <title>Logo Github</title>
                 <path d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 0 0 3.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 0 1-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0 0 25.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 0 1 5-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 0 1 112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 0 1 5 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 0 0 4-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32Z"/>
               </svg>
             </a>
           </li>
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/kevin-ferraretto/" class="social-link" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <a href="https://www.linkedin.com/in/kevin-ferraretto/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Kevin Ferraretto (nouvel onglet)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
                 <title>Logo Linkedin</title>
                 <path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"></path>
               </svg>
@@ -160,20 +161,20 @@
       </div>
     </aside>
 
-    <div class="main-content">
+    <div class="main-content" id="main-content">
       <nav class="navbar" aria-label="Navigation principale">
         <ul class="navbar-list">
           <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link="about" aria-current="page">A propos</button>
+            <button class="navbar-link active" data-nav-link="about" aria-current="page">À propos</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="portfolio" aria-current="page">Portfolio</button>
+            <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="resume" aria-current="page">Parcours</button>
+            <button class="navbar-link" data-nav-link="resume">Parcours</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="contact" aria-current="page">Contact</button>
+            <button class="navbar-link" data-nav-link="contact">Contact</button>
           </li>
         </ul>
       </nav>
@@ -361,8 +362,8 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symphony", title="Symfony" height="48" width="48">
-                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony" title="Symfony" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind" title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -407,11 +408,11 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/CS.svg" alt="C#", title="C#" height="48" width="48">
-                            <img src="./assets/images/icon/techno/DotNet.svg" alt="DotNet", title="DotNet" height="48" width="48">
-                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/Bootstrap.svg" alt="Bootstrap", title="Bootstrap" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CS.svg" alt="C#" title="C#" height="48" width="48">
+                            <img src="./assets/images/icon/techno/DotNet.svg" alt="DotNet" title="DotNet" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript" title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Bootstrap.svg" alt="Bootstrap" title="Bootstrap" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -454,11 +455,11 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/CS.svg" alt="C#", title="C#" height="48" width="48">
-                            <img src="./assets/images/icon/techno/DotNet.svg" alt="DotNet", title="DotNet" height="48" width="48">
-                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/Bootstrap.svg" alt="Bootstrap", title="Bootstrap" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CS.svg" alt="C#" title="C#" height="48" width="48">
+                            <img src="./assets/images/icon/techno/DotNet.svg" alt="DotNet" title="DotNet" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript" title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Bootstrap.svg" alt="Bootstrap" title="Bootstrap" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -502,9 +503,9 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
-                            <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP", title="PHP" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3" title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP" title="PHP" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -555,15 +556,15 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
-                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3" title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript" title="JavaScript" height="48" width="48">
                           </div>
                         </div>
                         <div class="details-source-code">
                           <h4>Code source :</h4>
                           <a href="https://github.com/MrSuricate2/Jeu-du-pendu" target="_blank" rel="noopener noreferrer">
-                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github", title="Github" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github" title="Github" height="48" width="48">
                           </a>
                         </div>
                       </div>
@@ -612,15 +613,15 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
-                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3" title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript" title="JavaScript" height="48" width="48">
                           </div>
                         </div>
                         <div class="details-source-code">
                           <h4>Code source :</h4>
                           <a href="https://github.com/MrSuricate2/Jeu-du-demineur" target="_blank" rel="noopener noreferrer">
-                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github", title="Github" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github" title="Github" height="48" width="48">
                           </a>
                         </div>
                       </div>
@@ -671,9 +672,9 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/Django.svg" alt="Django", title="Django" height="48" width="48">
-                            <img src="./assets/images/icon/techno/Python-Dark.svg" alt="Python", title="Python" height="48" width="48">
-                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Django.svg" alt="Django" title="Django" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Python-Dark.svg" alt="Python" title="Python" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind" title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                     </div>
@@ -716,10 +717,10 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony", title="Symfony" height="48" width="48">
-                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
-                            <img src="./assets/images/icon/techno/MySQL-Dark.svg" alt="Mysql", title="Mysql" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony" title="Symfony" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind" title="Tailwind" height="48" width="48">
+                            <img src="./assets/images/icon/techno/MySQL-Dark.svg" alt="Mysql" title="Mysql" height="48" width="48">
                           </div>
                         </div>
                     </div>
@@ -761,14 +762,14 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/React-Dark.svg" alt="React", title="React" height="48" width="48">
-                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
+                            <img src="./assets/images/icon/techno/React-Dark.svg" alt="React" title="React" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind" title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                         <div class="details-source-code">
                           <h4>Code source :</h4>
                           <a href="https://github.com/Aiikhoo/pok-dex" target="_blank" rel="noopener noreferrer">
-                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github", title="Github" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github" title="Github" height="48" width="48">
                           </a>
                         </div>
                       </div>
@@ -815,8 +816,8 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony", title="Symfony" height="48" width="48">
-                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony" title="Symfony" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind" title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -862,8 +863,8 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/Django.svg" alt="Django", title="Django" height="48" width="48">
-                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Django.svg" alt="Django" title="Django" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind" title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -884,7 +885,7 @@
                     </svg>
                   </div>
             
-                  <img src="./assets/images/portfolio/passwordGenerator.webp" alt="Fellback" loading="lazy">
+                  <img src="./assets/images/portfolio/passwordGenerator.webp" alt="Générateur de mots de passe" loading="lazy">
                 </figure>
             
                 <h3 class="project-title" data-project-title>Générateur de mots de passe</h3>
@@ -903,15 +904,15 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
-                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3" title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript" title="JavaScript" height="48" width="48">
                           </div>
                         </div>
                         <div class="details-source-code">
                           <h4>Code source :</h4>
                           <a href="https://github.com/MrSuricate2/password-generator" target="_blank" rel="noopener noreferrer">
-                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github", title="Github" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github" title="Github" height="48" width="48">
                           </a>
                         </div>
                       </div>
@@ -938,7 +939,7 @@
                     </svg>
                   </div>
             
-                  <img src="./assets/images/portfolio/techMarket.webp" alt="Fellback" loading="lazy">
+                  <img src="./assets/images/portfolio/techMarket.webp" alt="TechMarket" loading="lazy">
                 </figure>
             
                 <h3 class="project-title" data-project-title>TechMarket</h3>
@@ -965,9 +966,9 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
-                            <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP", title="PHP" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3" title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP" title="PHP" height="48" width="48">
                           </div>
                         </div>
                         <a class="table-btn" target="_blank" rel="noopener noreferrer" href="https://techMarket.kevin-ferraretto.fr/">Visiter le
@@ -1022,8 +1023,8 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony", title="Symfony" height="48" width="48">
-                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony" title="Symfony" height="48" width="48">
+                            <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind" title="Tailwind" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -1078,10 +1079,10 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
-                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
-                            <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP", title="PHP" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3" title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript" title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP" title="PHP" height="48" width="48">
                           </div>
                         </div>
                       </div>
@@ -1125,15 +1126,15 @@
                         <div class="details-compétence">
                           <h4>Compétences utilisées :</h4>
                           <div class="skill-list">
-                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
-                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
+                            <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                            <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3" title="CSS3" height="48" width="48">
+                            <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript" title="JavaScript" height="48" width="48">
                           </div>
                         </div>
                         <div class="details-source-code">
                           <h4>Code source :</h4>
                           <a href="https://github.com/MrSuricate2/Jeu-du-memory" target="_blank" rel="noopener noreferrer">
-                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github", title="Github" height="48" width="48">
+                            <img src="./assets/images/icon/techno/Github-Dark.svg" alt="Github" title="Github" height="48" width="48">
                           </a>
                         </div>
                       </div>
@@ -1160,8 +1161,7 @@
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
-          aria-describedby="modal-description"
-          hidden>
+          aria-describedby="modal-description">
 
           <div class="overlay" data-overlay></div>
 
@@ -1210,7 +1210,7 @@
           <ol class="timeline-list">
             <li class="timeline-item">
               <h4 class="timeline-item-title">EPSI - Mastère expert informatique et système d'information</h4>
-              <span>2025 — 2027</span>
+              <time datetime="2025">2025 — 2027</time>
             
               <p class="timeline-text">
                 Compétences en pilotage de l'informatique décisionnelle, traitement de données par IA et datavisualisation.
@@ -1225,7 +1225,7 @@
 
             <li class="timeline-item">
               <h4 class="timeline-item-title">EPSI - Bachelor concepteur développeur d'applications</h4>
-              <span>2022 — 2025</span>
+              <time datetime="2022">2022 — 2025</time>
 
               <p class="timeline-text">
                 Compétences en conception et test de solutions applicatives, administration d'infrastructures sécurisées, gestion des données et développement professionnel. Mission axée sur le développement d'applications (Java, Python), intégration continue et optimisation des bases de données en environnement client-serveur.
@@ -1235,7 +1235,7 @@
 
             <li class="timeline-item">
               <h4 class="timeline-item-title">EPSI - BTS services informatiques aux organisations - SLAM</h4>
-              <span>2022 — 2024</span>
+              <time datetime="2022">2022 — 2024</time>
 
               <p class="timeline-text">
                 Compétences en programmation, développement d'infrastructures et applications logicielles, avec une expertise en maintenance et évolution conformes aux normes de sécurité informatique. Expérience approfondie dans l'étude, le développement, l'évaluation des besoins et l'implantation de systèmes informatiques, respectant les normes professionnelles.
@@ -1245,7 +1245,7 @@
 
             <li class="timeline-item">
               <h4 class="timeline-item-title">Paul Sabatier - Licence pro conception et commande numérique des systèmes électriques embarqués</h4>
-              <span>2019 — 2020</span>
+              <time datetime="2019">2019 — 2020</time>
 
               <p class="timeline-text">
                 Formation spécialisée en Conception et Commande de Systèmes Électriques Embarqués, marquée par l'acquisition de compétences en électronique de puissance, informatique industrielle et contrôle énergétique, en vue d'une intégration réussie dans le domaine professionnel.
@@ -1254,7 +1254,7 @@
 
             <li class="timeline-item">
               <h4 class="timeline-item-title">Brevet d'aptitude aux fonctions d'animateur (BAFA)</h4>
-              <span>2018</span>
+              <time datetime="2018">2018</time>
 
               <p class="timeline-text">
                 La formation au BAFA m'a préparé à assurer la sécurité morale et physique des mineurs, à animer la vie quotidienne et les activités, et à accompagner les projets des jeunes. Elle a renforcé mes aptitudes à construire des relations de qualité.
@@ -1283,7 +1283,7 @@
             
               <h4 class="timeline-item-title">Développeur Android</h4>
             
-              <span>Septembre 2024 - Présent</span>
+              <time datetime="2024-09">Septembre 2024 - Présent</time>
             
               <p class="timeline-text">
                 Alternant à la BPCE-SI
@@ -1301,7 +1301,7 @@
 
               <h4 class="timeline-item-title">Développeur web</h4>
 
-              <span>Janvier 2024</span>
+              <time datetime="2024-01">Janvier 2024</time>
 
               <p class="timeline-text">
                 Deux mois de stage chez JDevService
@@ -1317,7 +1317,7 @@
 
               <h4 class="timeline-item-title">Développeur web</h4>
 
-              <span>Avril 2023</span>
+              <time datetime="2023-04">Avril 2023</time>
 
               <p class="timeline-text">
                 Deux mois de stage à la Street Favor association
@@ -1331,7 +1331,7 @@
 
               <h4 class="timeline-item-title">Technicien</h4>
 
-              <span>Mars 2020</span>
+              <time datetime="2020-03">Mars 2020</time>
 
               <p class="timeline-text">
                 En stage de quatre mois à l'Université Paul Sabatier
@@ -1371,13 +1371,13 @@
                 <h4>Front-End</h4>
               </div>
               <div class="skill-list">
-                  <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5", title="HTML5" height="48" width="48">
-                  <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3", title="CSS3" height="48" width="48">
-                  <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript", title="JavaScript" height="48" width="48">
-                  <img src="./assets/images/icon/techno/React-Dark.svg" alt="React", title="React" height="48" width="48">
-                  <img src="./assets/images/icon/techno/Django.svg" alt="Django", title="Django" height="48" width="48">
-                  <img src="./assets/images/icon/techno/Bootstrap.svg" alt="Bootstrap", title="Bootstrap" height="48" width="48">
-                  <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind", title="Tailwind" height="48" width="48">
+                  <img src="./assets/images/icon/techno/HTML.svg" alt="HTML5" title="HTML5" height="48" width="48">
+                  <img src="./assets/images/icon/techno/CSS.svg" alt="CSS3" title="CSS3" height="48" width="48">
+                  <img src="./assets/images/icon/techno/JavaScript.svg" alt="JavaScript" title="JavaScript" height="48" width="48">
+                  <img src="./assets/images/icon/techno/React-Dark.svg" alt="React" title="React" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Django.svg" alt="Django" title="Django" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Bootstrap.svg" alt="Bootstrap" title="Bootstrap" height="48" width="48">
+                  <img src="./assets/images/icon/techno/TailwindCSS-Dark.svg" alt="Tailwind" title="Tailwind" height="48" width="48">
               </div>
             </li>
 
@@ -1388,14 +1388,14 @@
               </div>
 
               <div class="skill-list">
-                  <img src="./assets/images/icon/techno/Java-Dark.svg" alt="Java", title="Java" height="48" width="48">
-                  <img src="./assets/images/icon/techno/Python-Dark.svg" alt="Python", title="Python" height="48" width="48">
-                  <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP", title="PHP" height="48" width="48">
-                  <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony", title="Symfony" height="48" width="48">
-                  <img src="./assets/images/icon/techno/CS.svg" alt="C#", title="C#" height="48" width="48">
-                  <img src="./assets/images/icon/techno/DotNet.svg" alt="DotNet", title="DotNet" height="48" width="48">
-                  <img src="./assets/images/icon/techno/Laravel-Dark.svg" alt="Laravel", title="Laravel" height="48" width="48">
-                  <img src="./assets/images/icon/techno/Kotlin-Dark.svg" alt="Kotlin", title="Kotlin" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Java-Dark.svg" alt="Java" title="Java" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Python-Dark.svg" alt="Python" title="Python" height="48" width="48">
+                  <img src="./assets/images/icon/techno/PHP-Dark.svg" alt="PHP" title="PHP" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Symfony-Dark.svg" alt="Symfony" title="Symfony" height="48" width="48">
+                  <img src="./assets/images/icon/techno/CS.svg" alt="C#" title="C#" height="48" width="48">
+                  <img src="./assets/images/icon/techno/DotNet.svg" alt="DotNet" title="DotNet" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Laravel-Dark.svg" alt="Laravel" title="Laravel" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Kotlin-Dark.svg" alt="Kotlin" title="Kotlin" height="48" width="48">
               </div>
 
             </li>
@@ -1406,10 +1406,10 @@
               </div>
 
               <div class="skill-list">
-                  <img src="./assets/images/icon/techno/Idea-Dark.svg" alt="JetBrains", title="JetBrains" height="48" width="48">
-                  <img src="./assets/images/icon/techno/VSCode-Dark.svg" alt="VsCode", title="VsCode" height="48" width="48">
-                  <img src="./assets/images/icon/techno/VisualStudio-Dark.svg" alt="VisualStudio", title="VisualStudio" height="48" width="48">
-                  <img src="./assets/images/icon/techno/AndroidStudio-Dark.svg" alt="AndroidStudio", title="AndroidStudio" height="48" width="48">
+                  <img src="./assets/images/icon/techno/Idea-Dark.svg" alt="JetBrains" title="JetBrains" height="48" width="48">
+                  <img src="./assets/images/icon/techno/VSCode-Dark.svg" alt="VsCode" title="VsCode" height="48" width="48">
+                  <img src="./assets/images/icon/techno/VisualStudio-Dark.svg" alt="VisualStudio" title="VisualStudio" height="48" width="48">
+                  <img src="./assets/images/icon/techno/AndroidStudio-Dark.svg" alt="AndroidStudio" title="AndroidStudio" height="48" width="48">
               </div>
 
             </li>
@@ -1453,19 +1453,19 @@
               aria-label="Champ anti-spam, ne pas remplir">
 
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Nom complet" required data-form-input>
+              <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Nom complet" aria-label="Nom complet" required data-form-input autocomplete="name">
 
-              <input type="email" name="email" class="form-input" placeholder="Adresse électronique" required data-form-input>
+              <input type="email" id="email" name="email" class="form-input" placeholder="Adresse électronique" aria-label="Adresse électronique" required data-form-input autocomplete="email">
             </div>
 
-            <textarea name="message" class="form-input" placeholder="Votre message" required data-form-input></textarea>
+            <textarea id="message" name="message" class="form-input" placeholder="Votre message" aria-label="Votre message" required data-form-input autocomplete="off"></textarea>
 
             <div class="form-checkbox">
               <label for="consent" class="checkbox-label">
                 <input type="checkbox" id="consent" name="consent" required aria-required="true">
-                <p class="checkbox-text">
-                  J'accepte que mes données soient utilisées pour me recontacter. Consultez la <a href="./politique-confidentialite.html" target="_blank">politique de confidentialité</a>.
-                </p>
+                <span class="checkbox-text">
+                  J'accepte que mes données soient utilisées pour me recontacter. Consultez la <a href="./politique-confidentialite.html" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>.
+                </span>
               </label>
             </div>
 
@@ -1489,14 +1489,7 @@
   </main>
 
   <script src="./assets/js/script.js" defer></script>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./assets/js/sw.js')
-        .then(reg => console.log('Service Worker enregistré', reg))
-        .catch(err => console.log('Erreur Service Worker', err));
-    }
-  </script>
+  <script src="./assets/js/sw-register.js" defer></script>
 </body>
 
 </html>

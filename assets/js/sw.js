@@ -1,10 +1,11 @@
 // Incrémente cette version à chaque mise à jour du site
-const CACHE_VERSION = 'portfolio-v1.0.1';
+const CACHE_VERSION = 'portfolio-v1.1.0';
 const CACHE_FILES = [
   '/',
   '/index.html',
   '/assets/css/style.css',
   '/assets/js/script.js',
+  '/assets/js/sw-register.js',
   '/assets/images/favicon/favicon-96x96.png'
 ];
 
