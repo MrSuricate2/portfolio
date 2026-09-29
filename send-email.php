@@ -64,6 +64,22 @@ if (!empty($_POST['_gotcha'])) {
     exit;
 }
 
+// Vérification du captcha (usage unique, valide 10 minutes)
+$captcha = $_SESSION['captcha'] ?? null;
+unset($_SESSION['captcha']);
+$captcha_reponse = trim($_POST['captcha'] ?? '');
+
+if (
+    !$captcha
+    || (time() - $captcha['created']) > 600
+    || !ctype_digit($captcha_reponse)
+    || (int) $captcha_reponse !== $captcha['answer']
+) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Réponse au captcha incorrecte. Veuillez réessayer.']);
+    exit;
+}
+
 // Sanitisation des données
 $nom = htmlspecialchars(strip_tags($nom));
 $email = htmlspecialchars(strip_tags($email));

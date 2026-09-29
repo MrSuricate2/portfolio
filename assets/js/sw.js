@@ -1,5 +1,5 @@
 // Incrémente cette version à chaque mise à jour du site
-const CACHE_VERSION = 'portfolio-v1.1.2';
+const CACHE_VERSION = 'portfolio-v1.1.3';
 const CACHE_FILES = [
   '/',
   '/index.html',
@@ -51,7 +51,7 @@ self.addEventListener('activate', (event) => {
 // Fetch : stratégie de cache
 self.addEventListener('fetch', (event) => {
   // Network only pour les requêtes API
-  if (event.request.url.includes('send-email.php')) {
+  if (event.request.url.includes('send-email.php') || event.request.url.includes('captcha.php')) {
     event.respondWith(fetch(event.request));
     return;
   }

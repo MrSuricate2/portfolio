@@ -1321,6 +1321,17 @@ textarea.form-input::-webkit-resizer { display: none; }
   text-decoration-color: var(--white-2);
 }
 
+.form-captcha {
+  margin-bottom: 20px;
+}
+
+.captcha-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+}
+
 .form-message {
   margin: 20px 0;
   padding: 15px 20px;
