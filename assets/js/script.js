@@ -214,6 +214,25 @@ if (consentCheckbox) {
   consentCheckbox.addEventListener('change', validateForm);
 }
 
+// Charge une nouvelle question captcha (usage unique côté serveur)
+async function loadCaptcha() {
+  const question = document.getElementById('captchaQuestion');
+  const input = document.getElementById('captcha');
+  if (!question || !input) return;
+
+  input.value = '';
+  try {
+    const response = await fetch('captcha.php', { cache: 'no-store' });
+    const data = await response.json();
+    question.textContent = data.success ? data.question : 'Question indisponible, rechargez la page.';
+  } catch (error) {
+    console.error('Erreur captcha:', error);
+    question.textContent = 'Question indisponible, rechargez la page.';
+  }
+}
+
+loadCaptcha();
+
 // Fonction pour afficher un message
 function showFormMessage(message, type = 'success') {
   if (!formMessage) return;
@@ -282,6 +301,8 @@ if (form) {
     } finally {
       // Restaurer le texte du bouton
       buttonText.textContent = originalText;
+      // Le captcha est à usage unique : on en demande un nouveau
+      loadCaptcha().then(validateForm);
     }
   });
 }
