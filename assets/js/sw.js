@@ -1,5 +1,5 @@
 // Incrémente cette version à chaque mise à jour du site
-const CACHE_VERSION = 'portfolio-v1.1.3';
+const CACHE_VERSION = 'portfolio-v1.1.4';
 const CACHE_FILES = [
   '/',
   '/index.html',
