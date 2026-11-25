@@ -83,10 +83,23 @@ const supportsHintTooltips = (() => {
 let tooltipCount = 0;
 const normalizeText = (s) => (s || "").replace(/\s+/g, " ").trim();
 
-function enhanceTooltips(root = document) {
+// Yield to the main thread so pending input/rendering can run between chunks of work
+const yieldToMain = () =>
+  "scheduler" in window && "yield" in scheduler
+    ? scheduler.yield()
+    : new Promise((resolve) => setTimeout(resolve, 0));
+
+// Async + time-sliced: ~90 icons are converted without creating one long task (INP)
+async function enhanceTooltips(root = document) {
   if (!supportsHintTooltips) return;
 
+  let deadline = performance.now() + 50;
   for (const img of root.querySelectorAll("img[title]")) {
+    if (performance.now() >= deadline) {
+      await yieldToMain();
+      deadline = performance.now() + 50;
+    }
+
     const text = normalizeText(img.title);
     if (!text || img.closest("button, a, [data-project-text]")) continue;
 
@@ -146,7 +159,12 @@ if (!("closedBy" in HTMLDialogElement.prototype)) {
   modalContainer.addEventListener("pointerup", (e) => { if (pressedOutside && outside(e)) closeModal(); });
 }
 
-enhanceTooltips();
+// not needed for first paint: run once the browser is idle
+if ("requestIdleCallback" in window) {
+  requestIdleCallback(() => enhanceTooltips(), { timeout: 2000 });
+} else {
+  setTimeout(() => enhanceTooltips(), 200);
+}
 
 // custom select variables
 const select = document.querySelector("[data-select]");
