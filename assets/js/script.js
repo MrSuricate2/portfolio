@@ -25,86 +25,128 @@ if (sidebar && sidebarBtn) {
 
 // project variables
 const projectItem = document.querySelectorAll("[data-project-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
+const modalContainer = document.querySelector("[data-modal-container]"); // <dialog>
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
 
 // modal variable
-const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
 
-// modal toggle function
-let lastFocusedElement = null;
+// Exit animation needs `overlay` + discrete `display` transitions (Chromium/Safari 18).
+// Probe instead of trusting CSS.supports (Firefox parses allow-discrete but ignores it for display).
+let supportsDisplayTransition;
+function canTransitionDisplay() {
+  if (supportsDisplayTransition !== undefined) return supportsDisplayTransition;
+  if (!window.CSS?.supports?.("transition-behavior", "allow-discrete") || !document.body) return false;
+  const probe = document.createElement("div");
+  probe.style.cssText = "transition: display 1s allow-discrete !important; display: block;";
+  document.body.appendChild(probe);
+  getComputedStyle(probe).display;
+  probe.style.display = "none";
+  supportsDisplayTransition = getComputedStyle(probe).display === "block";
+  probe.remove();
+  return supportsDisplayTransition;
+}
 
-const testimonialsModalFunc = function () {
-  try {
-    if (modalContainer && overlay) {
-      const isOpening = !modalContainer.classList.contains("active");
-      if (isOpening) {
-        lastFocusedElement = document.activeElement;
-      }
-      modalContainer.classList.toggle("active");
-      overlay.classList.toggle("active");
-      if (isOpening) {
-        modalCloseBtn.focus();
-      } else if (lastFocusedElement) {
-        lastFocusedElement.focus();
-        lastFocusedElement = null;
-      }
+function supportsTopLayerExit() {
+  return window.CSS?.supports?.("overlay", "auto") && canTransitionDisplay();
+}
+
+async function closeModal() {
+  if (!modalContainer.open) return;
+  if (!supportsTopLayerExit()) {
+    modalContainer.setAttribute("data-closing", "");
+    const animations = modalContainer.getAnimations({ subtree: true });
+    if (animations.length > 0) {
+      await Promise.race([
+        Promise.allSettled(animations.map((a) => a.finished)),
+        new Promise((r) => setTimeout(r, 2000)),
+      ]);
     }
-  } catch (error) {
-    console.error('Erreur dans la fonction modale:', error);
+    if (!modalContainer.hasAttribute("data-closing")) return;
+    modalContainer.removeAttribute("data-closing");
+  }
+  modalContainer.close();
+}
+
+// Tooltips: replace native `title` on icons with interest-triggered popover hints
+// (interestfor + popover="hint" + CSS anchor positioning). Where one of these APIs
+// is missing, the native `title` is kept untouched.
+const supportsHintTooltips = (() => {
+  if (!("interestForElement" in HTMLButtonElement.prototype)) return false;
+  if (!CSS.supports("anchor-name: --a")) return false;
+  const probe = document.createElement("div");
+  probe.popover = "hint";
+  return probe.popover === "hint";
+})();
+
+let tooltipCount = 0;
+const normalizeText = (s) => (s || "").replace(/\s+/g, " ").trim();
+
+function enhanceTooltips(root = document) {
+  if (!supportsHintTooltips) return;
+
+  for (const img of root.querySelectorAll("img[title]")) {
+    const text = normalizeText(img.title);
+    if (!text || img.closest("button, a, [data-project-text]")) continue;
+
+    const id = `tip-${++tooltipCount}`;
+    const trigger = document.createElement("button");
+    trigger.type = "button";
+    trigger.className = "tip-trigger";
+    trigger.setAttribute("interestfor", id);
+
+    const hint = document.createElement("div");
+    hint.id = id;
+    hint.className = "tip";
+    hint.setAttribute("popover", "hint");
+    hint.textContent = text;
+
+    img.removeAttribute("title");
+    img.replaceWith(trigger);
+    trigger.append(img);
+    trigger.after(hint); // right after the trigger so it reads in sequence
+
+    // Hint repeating the accessible name (img alt): nothing to add.
+    // Otherwise expose it as the trigger's description.
+    if (normalizeText(img.alt) !== text) {
+      hint.setAttribute("role", "tooltip");
+      trigger.setAttribute("aria-describedby", id);
+    }
   }
 }
 
 // add click event to all modal items
 for (const element of projectItem) {
-
   element.addEventListener("click", function () {
     modalTitle.innerHTML = this.querySelector("[data-project-title]").innerHTML;
     modalText.innerHTML = this.querySelector("[data-project-text]").innerHTML;
-
-    testimonialsModalFunc();
-
+    enhanceTooltips(modalText);
+    modalContainer.showModal();
   });
-
 }
 
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+modalCloseBtn.addEventListener("click", closeModal);
 
-// focus trap and Escape key for modal
-modalContainer.addEventListener("keydown", function (e) {
-  if (!modalContainer.classList.contains("active")) return;
-
-  const focusable = Array.from(modalContainer.querySelectorAll(
-    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-  ));
-
-  if (e.key === "Escape") {
-    testimonialsModalFunc();
-    return;
-  }
-
-  if (e.key === "Tab" && focusable.length > 0) {
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-
-    if (e.shiftKey) {
-      if (document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      }
-    } else {
-      if (document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    }
-  }
+// Esc / closedby="any" light dismiss: route through closeModal so they animate too
+modalContainer.addEventListener("cancel", (e) => {
+  if (supportsTopLayerExit()) return;
+  e.preventDefault();
+  closeModal();
 });
+
+// light-dismiss fallback where `closedby` is unsupported (Safari)
+if (!("closedBy" in HTMLDialogElement.prototype)) {
+  const outside = (e) => {
+    const r = modalContainer.getBoundingClientRect();
+    return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+  };
+  let pressedOutside = false;
+  modalContainer.addEventListener("pointerdown", (e) => { pressedOutside = outside(e); });
+  modalContainer.addEventListener("pointerup", (e) => { if (pressedOutside && outside(e)) closeModal(); });
+}
+
+enhanceTooltips();
 
 // custom select variables
 const select = document.querySelector("[data-select]");

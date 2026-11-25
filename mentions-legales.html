@@ -156,6 +156,21 @@
       }
     }
   </style>
+  <!-- Speculative loading: prefetch same-origin pages when the user hovers a link -->
+  <script type="speculationrules">
+  {
+    "tag": "hover-prefetch",
+    "prefetch": [{
+      "where": {
+        "and": [
+          { "href_matches": "/*" },
+          { "not": { "selector_matches": "[target=_blank], [download], [rel~=nofollow]" } }
+        ]
+      },
+      "eagerness": "moderate"
+    }]
+  }
+  </script>
 </head>
 
 <body>

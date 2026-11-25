@@ -58,6 +58,21 @@
   <link rel="manifest" href="./site.webmanifest" />
   <link rel="preload" href="./assets/css/style.css" as="style">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Speculative loading: prefetch same-origin pages when the user hovers a link -->
+  <script type="speculationrules">
+  {
+    "tag": "hover-prefetch",
+    "prefetch": [{
+      "where": {
+        "and": [
+          { "href_matches": "/*" },
+          { "not": { "selector_matches": "[target=_blank], [download], [rel~=nofollow]" } }
+        ]
+      },
+      "eagerness": "moderate"
+    }]
+  }
+  </script>
 </head>
 
 <body>
@@ -1338,18 +1353,13 @@
           - portfolio modal
         -->
 
-        <div class="modal-container"
+        <dialog class="projet-modal"
           data-modal-container
-          role="dialog"
-          aria-modal="true"
+          closedby="any"
           aria-labelledby="modal-title"
           aria-describedby="modal-description">
 
-          <div class="overlay" data-overlay></div>
-
-          <section class="projet-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn aria-label="Fermer la modale">
+            <button type="button" class="modal-close-btn" data-modal-close-btn aria-label="Fermer la modale">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <title>Close</title>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M368 368L144 144M368 144L144 368" class="ionicon-fill-none ionicon-stroke-width"></path>
@@ -1364,9 +1374,7 @@
 
             </div>
 
-          </section>
-
-        </div>
+        </dialog>
 
       </article>
 
